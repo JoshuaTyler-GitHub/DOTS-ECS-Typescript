@@ -1,0 +1,11 @@
+{
+  "name": "dots_ecs_typescript_package",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "install": "npm run install:web",
+    "install:web": "cd web-app && npm install",
+    "start": "npm run start:web",
+    "start:web": "cd web-app && npm run dev"
+  }
+}

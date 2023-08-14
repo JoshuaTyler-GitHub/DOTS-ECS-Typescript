@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- head -->
+  <head>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+    <meta charset="utf-8" />
+    <meta name="description" content="DOTS-ECS-Typescript" />
+    <meta name="theme-color" content="#FFF" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="version" content="0.0.1" />
+    <meta http-equiv="expires" content="0" />
+    <style>
+      html,
+      body,
+      #root {
+        height: 100%;
+      }
+      #curtain {
+        background: #fff;
+        height: 100vh;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        z-index: 9999;
+      }
+      #root {
+        visibility: hidden;
+      }
+    </style>
+    <title>DOTS-ECS-Typescript</title>
+  </head>
+
+  <!-- body -->
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="curtain"></div>
+    <div id="root"></div>
+  </body>
+
+  <!-- boot animation listener -->
+  <script type="text/javascript">
+    window.isBootAnimationComplete = false;
+    const bootAnimation = document.getElementById('boot-animation');
+    bootAnimation.addEventListener('animationend', (e) => {
+      if (e.target === bootAnimation) {
+        window.isBootAnimationComplete = true;
+      }
+    });
+  </script>
+</html>

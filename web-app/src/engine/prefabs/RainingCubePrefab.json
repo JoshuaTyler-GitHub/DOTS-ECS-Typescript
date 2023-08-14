@@ -1,0 +1,43 @@
+{
+  "archetype": {
+    "components": [
+      "Gravity",
+      "Mesh",
+      "Position",
+      "PositionUpdate",
+      "Rain",
+      "Rotation",
+      "RotationUpdate",
+      "Scale"
+    ]
+  },
+  "parameters": {
+    "Mesh": {
+      "geometry": {
+        "type": "box"
+      },
+      "material": {
+        "parameters": {
+          "color": "#800080"
+        },
+        "type": "basic"
+      }
+    },
+    "PositionUpdate": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "isFixed": false,
+      "isOverride": true,
+      "isPersistent": false
+    },
+    "RotationUpdate": {
+      "x": 0.5,
+      "y": 0.5,
+      "z": 0.5,
+      "isFixed": true,
+      "isOverride": false,
+      "isPersistent": true
+    }
+  }
+}

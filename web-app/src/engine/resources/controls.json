@@ -1,0 +1,22 @@
+{
+  "gamepad": {},
+  "keyboard": {
+    "keyA": { "code": "KeyA", "keyCode": 65 },
+    "keyD": { "code": "KeyD", "keyCode": 68 },
+    "keyS": { "code": "KeyS", "keyCode": 83 },
+    "keyShiftLeft": { "code": "shiftLeft", "keyCode": 16 },
+    "keyW": { "code": "KeyW", "keyCode": 87 }
+  },
+  "mouse": {
+    "axis": {
+      "x": { "code": "MouseAxisX" },
+      "y": { "code": "MouseAxisY" },
+      "z": { "code": "MouseAxisZ" }
+    },
+    "buttons": {
+      "1": { "code": "MouseLeft" },
+      "2": { "code": "MouseRight" },
+      "3": { "code": "MouseMiddle" }
+    }
+  }
+}

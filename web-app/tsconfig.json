@@ -1,0 +1,88 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "alwaysStrict": true,
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "target": "es5",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      // app
+      "@app/*": ["./src/app/*"],
+      "@app-api/*": ["./src/app/api/*"],
+      "@app-components/*": ["./src/app/components/*"],
+      "@app-context/*": ["./src/app/context/*"],
+      "@app-errors/*": ["./src/errors/*"],
+      "@app-managers/*": ["./src/app/managers/*"],
+      "@app-models/*": ["./src/app/models/*"],
+      "@app-pages/*": ["./src/app/components/*"],
+      "@app-resources/*": ["./src/app/resources/*"],
+      "@app-routes/*": ["./src/app/navigation/*"],
+      "@app-state/*": ["./src/app/state/*"],
+
+      // common
+      "@common-log/*": ["./src/common/log/*"],
+      "@common-enums/*": ["./src/common/enums/*"],
+      "@common-errors/*": ["./src/common/errors/*"],
+      "@common-utils/*": ["./src/common/utils/*"],
+      "@common-validations/*": ["./src/common/validations/*"],
+
+      // engine
+      "@engine-components/*": ["./src/engine/components/*"],
+      "@engine-entities/*": ["./src/engine/entities/*"],
+      "@engine-enums/*": ["./src/engine/enums/*"],
+      "@engine-errors/*": ["./src/engine/errors/*"],
+      "@engine-factories/*": ["./src/engine/factories/*"],
+      "@engine-managers/*": ["./src/engine/managers/*"],
+      "@engine-math/*": ["src/engine/math/*"],
+      "@engine-models/*": ["./src/engine/models/*"],
+      "@engine-resources/*": ["./src/engine/resources/*"],
+      "@engine-scenes/*": ["./src/engine/scenes/*"],
+      "@engine-simulation/*": ["./src/engine/simulation/*"],
+      "@engine-systems/*": ["./src/engine/systems/*"],
+
+      // game
+      "@game-resources/*": ["./src/game/resources/*"],
+      "@game-state/*": ["./src/game/state/*"],
+
+      // state
+      "@state/*": ["./src/state/*"],
+
+      // test
+      "@test/*": ["./src/test/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
+}

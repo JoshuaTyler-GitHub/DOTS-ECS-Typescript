@@ -1,0 +1,4 @@
+export enum Time {
+  MILLISECONDS_TO_SECONDS = 0.001,
+  SECONDS_TO_MILLISECONDS = 1000,
+}
