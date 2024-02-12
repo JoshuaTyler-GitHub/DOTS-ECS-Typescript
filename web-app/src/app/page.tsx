@@ -19,7 +19,7 @@ import CanvasManager from '@engine-managers/CanvasManager';
 import UserInputManager from '@engine-managers/UserInputManager';
 
 // engine-scenes
-import SandboxScene from '@engine-scenes/sandbox/SandboxScene';
+import CommandBlockBuilderScene from '@engine-scenes/command-block-builder/CommandBlockBuilderScene';
 
 // engine-simulation
 import SimulationWorld from '@engine-simulation/SimulationWorld';
@@ -33,7 +33,7 @@ export default function Home(): ReactElement {
    */
   const onCanvasManager = (canvasManager: CanvasManager): void => {
     const simulationWorld = new SimulationWorld();
-    const scene = new SandboxScene(canvasManager, simulationWorld);
+    const scene = new CommandBlockBuilderScene(canvasManager, simulationWorld);
     console.log('scene', scene);
 
     // canvas controls
@@ -42,6 +42,12 @@ export default function Home(): ReactElement {
     };
     canvasManager.onKeyUp = (event: Event): void => {
       UserInputManager.keyUp(event);
+    };
+    canvasManager.onMouseDown = (event: Event): void => {
+      UserInputManager.mouseDown(event);
+    };
+    canvasManager.onMouseUp = (event: Event): void => {
+      UserInputManager.mouseUp(event);
     };
 
     // start simulation

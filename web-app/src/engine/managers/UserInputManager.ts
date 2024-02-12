@@ -9,13 +9,16 @@ import { UserInput } from '@engine-enums/UserInput';
  */
 export default class UserInputManager {
   public static controls = {
-    crouch: false,
     backward: false,
-    left: false,
-    jump: false,
-    right: false,
-    sprint: false,
+    crouch: false,
     forward: false,
+    isMouseDown: false,
+    jump: false,
+    left: false,
+    right: false,
+    rotateLeft: false,
+    rotateRight: false,
+    sprint: false,
   };
 
   public static keyDown(event: Event): void {
@@ -42,6 +45,12 @@ export default class UserInputManager {
         break;
       case UserInput.SPACE:
         controls.jump = true;
+        break;
+      case UserInput.Q:
+        controls.rotateLeft = true;
+        break;
+      case UserInput.E:
+        controls.rotateRight = true;
         break;
       default:
         break;
@@ -73,8 +82,22 @@ export default class UserInputManager {
       case UserInput.SPACE:
         controls.jump = false;
         break;
+      case UserInput.Q:
+        controls.rotateLeft = false;
+        break;
+      case UserInput.E:
+        controls.rotateRight = false;
+        break;
       default:
         break;
     }
+  }
+
+  public static mouseDown(event: Event): void {
+    UserInputManager.controls.isMouseDown = true;
+  }
+
+  public static mouseUp(event: Event): void {
+    UserInputManager.controls.isMouseDown = false;
   }
 }

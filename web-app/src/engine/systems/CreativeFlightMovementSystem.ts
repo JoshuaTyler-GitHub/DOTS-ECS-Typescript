@@ -27,7 +27,17 @@ export default class CreativeFlightMovementSystem extends ComponentSystem {
     const { simulationTime } = simulationWorld;
     const { fixedDeltaTime } = simulationTime;
     const { controls } = UserInputManager;
-    const { backward, crouch, forward, jump, left, right, sprint } = controls;
+    const {
+      backward,
+      crouch,
+      forward,
+      jump,
+      left,
+      right,
+      rotateLeft,
+      rotateRight,
+      sprint,
+    } = controls;
 
     // query entities
     const entities = this.getEntityQuery(
@@ -54,6 +64,12 @@ export default class CreativeFlightMovementSystem extends ComponentSystem {
         const { acceleration, decceleration, speed, speedMultiplier } = creativeFlightMovementComponent; // prettier-ignore
         const { vector: rotation } = rotationComponent;
 
+        // calculate new rotational velocity
+        const rotationYPlus = rotateRight ? -1 : 0;
+        const rotationYMinus = rotateLeft ? 1 : 0;
+        rotationalVelocity.y = rotationYPlus + rotationYMinus;
+
+        // calculate targeted speed
         let speedTarget = speed;
         if (crouch) speedTarget = speed * 0.5;
         if (sprint) speedTarget = speed * speedMultiplier;
@@ -66,10 +82,14 @@ export default class CreativeFlightMovementSystem extends ComponentSystem {
         const zPlus = forward ? 1 * speedTarget : 0;
         const zMinus = backward ? -1 * speedTarget : 0;
 
+        // adjust directional velocity based on forward direction
+        const forwardVelocity = rotation.y / Math.PI;
+        // console.log('forwardVelocity', forwardVelocity);
+
         // add to directional velocity
-        directionalVelocity.x = xPlus + xMinus;;
-        directionalVelocity.y = yPlus + yMinus;
-        directionalVelocity.z = zPlus + zMinus;
+        directionalVelocity.x = (xPlus + xMinus) * rotation.x;
+        directionalVelocity.y = (yPlus + yMinus) * rotation.y;
+        directionalVelocity.z = (zPlus + zMinus) * rotation.z;
       }),
     );
   }

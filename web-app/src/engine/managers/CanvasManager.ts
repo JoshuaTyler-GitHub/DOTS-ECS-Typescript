@@ -48,6 +48,8 @@ export default class CanvasManager {
   public onFocus: Function | null = null;
   public onKeyDown: Function | null = null;
   public onKeyUp: Function | null = null;
+  public onMouseDown: Function | null = null;
+  public onMouseUp: Function | null = null;
   public onResize: Function | null = null;
 
   /**
